@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         Container(
-          height: 100,
+          width: 300,
         ),
       ],
     );
