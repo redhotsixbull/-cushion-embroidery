@@ -13,18 +13,49 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Center(child: Text("BODYFRIEND")),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-          ],
+      body: body(context),
+    );
+  }
+
+  Widget body(BuildContext context) {
+    if (MediaQuery.of(context).orientation == Orientation.portrait) {
+      return portrait();
+    } else {
+      return landscape();
+    }
+  }
+
+  Widget portrait() {
+    return Column(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.yellow,
+          ),
         ),
-      ),
+        Container(
+          height: 100,
+        ),
+      ],
+    );
+  }
+
+  Widget landscape() {
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child: Container(
+            color: Colors.yellow,
+          ),
+        ),
+        Container(
+          height: 100,
+        ),
+      ],
     );
   }
 }
